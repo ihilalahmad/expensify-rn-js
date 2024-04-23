@@ -19,16 +19,12 @@ import { useNavigation } from '@react-navigation/native';
 import Loading from '../components/Globals/Loading';
 
 const AddExpenseScreen = (props) => {
-  const { id, place, country } = props.route.params;
+  const { id } = props.route.params;
   const navigation = useNavigation();
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
   const [selectedCategory, setCategory] = useState('');
   const [loading, setLoading] = useState(false);
-
-  const userSelector = useAppSelector(useUser);
-
-  console.log('Trip Id 2: ', id);
 
   const handleAddExpense = async () => {
     if (title && amount && selectedCategory) {

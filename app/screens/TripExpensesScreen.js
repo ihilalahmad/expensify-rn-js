@@ -39,8 +39,6 @@ const TripExpensesScreen = (props) => {
   const [expenses, setExpenses] = useState([]);
   const isFocused = useIsFocused();
 
-  console.log('trip id 1: ', id);
-
   const fetchExpenses = async () => {
     const expenses = query(expensesRef, where('tripId', '==', id));
     const expensesSnapshot = await getDocs(expenses);
